@@ -4,6 +4,7 @@ import {BehaviorSubject, Observable} from "rxjs";
 import {LoginCreds} from "../models/login-creds.model";
 import {User} from "../models/user.model";
 import {RegisterCreds} from "../models/register-creds.model";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,13 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private router: 
-  ) { }
+    private router: Router
+  ) {
+    const user = localStorage.getItem('user');
+    if (user) {
+      this.userDataSource.next(JSON.parse(user));
+    }
+  }
 
   private userDataSource: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null);
   public user$ = this.userDataSource.asObservable();
@@ -42,10 +48,19 @@ export class AuthService {
     })
   };
 
+  public saveUser(user: User) {
+    this.userDataSource.next(user);
+    this.saveUserToLocalStorage(user);
+  }
+
   public logout() {
     localStorage.removeItem('user');
     this.userDataSource.next(null);
     this.router.navigate(['']);
+  };
+
+  private saveUserToLocalStorage(user: User){
+    localStorage.setItem('user', JSON.stringify(user));
   }
 
 }

@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {AuthService} from "./core/services/auth.service";
 
 @NgModule({
   declarations: [
@@ -12,9 +14,13 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpClient,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

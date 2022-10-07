@@ -3,13 +3,24 @@
       <img class="logo" src="assets/images/logo.png" alt="logo">
     </div>
     <nav class="nav">
-      <ul>
+      <ul *ngIf="currentUser$ | async as user; else notAuthenticated">
         <li>
-          Login
+          {{ user.username }}
         </li>
         <li>
-          Register
+          Logout
         </li>
       </ul>
     </nav>
 </header>
+
+<ng-template #notAuthenticated>
+  <ul>
+    <li>
+      Login
+    </li>
+    <li>
+      Register
+    </li>
+  </ul>
+</ng-template>

@@ -1,20 +1,28 @@
-<div>
+<div class="outer-container">
   <form [formGroup]="validateForm"
         class="login-form"
         (ngSubmit)="submitForm()">
-    <form
-    <input #email
-           type="text"
-           formControlName="email"
-           placeholder="Username"/>
 
-    <input #password
-           type="password"
-           formControlName="password"
-           placeholder="Password"/>
+      <label for="name">
+        Username:
+      </label>
+      <input id="name"
+             type="text"
+             formControlName="email"
+             placeholder="Username"/>
+
+      <label for="name">
+        Password:
+      </label>
+      <input #password
+             type="password"
+             formControlName="password"
+             placeholder="Password"/>
 
     <button class="login-form-button login-form-margin">Log in</button>
-    Or
-    <a [routerLink]="['/auth/register']">register now!</a>
+    <span>
+          Or <a [routerLink]="['/auth/register']">register now!</a>
+    </span>
+
   </form>
 </div>

@@ -1,7 +1,8 @@
-import {AfterViewInit, Component, ElementRef, EventEmitter, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {fromEvent, merge} from "rxjs";
 import {User} from "../../../core/models/user.model";
+import {LoginCreds} from "../../../core/models/login-creds.model";
 
 @Component({
   selector: 'app-login-form',
@@ -13,16 +14,16 @@ export class LoginFormComponent implements OnInit, AfterViewInit {
   validateForm: FormGroup
   message: string = ''
 
-  @ViewChild('email') emailInput! : ElementRef<HTMLElement>;
+  @ViewChild('username') usernameInput! : ElementRef<HTMLElement>;
   @ViewChild('password') passwordInput! : ElementRef<HTMLElement>;
 
-  onSubmit: EventEmitter<User> = new EventEmitter<User>();
+  @Output() onSubmit: EventEmitter<LoginCreds> = new EventEmitter<LoginCreds>();
 
   constructor(
     private fb: FormBuilder
   ) {
     this.validateForm = this.fb.group({
-      email: [null, [Validators.required]],
+      username: [null, [Validators.required]],
       password: [null, [Validators.required]],
       remember: [null]
     })
@@ -33,7 +34,7 @@ export class LoginFormComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     merge(
-      fromEvent<InputEvent>(this.emailInput.nativeElement, 'input'),
+      fromEvent<InputEvent>(this.usernameInput.nativeElement, 'input'),
       fromEvent<InputEvent>(this.passwordInput.nativeElement, 'input'),
     ).subscribe(
       () => {

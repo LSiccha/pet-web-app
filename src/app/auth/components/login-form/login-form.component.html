@@ -4,23 +4,25 @@
         class="login-form"
         (ngSubmit)="submitForm()">
 
-      <label for="username">
-        Username
-      </label>
-      <input id="username"
-             type="text"
-             formControlName="username"
-             placeholder="Username"/>
+    <label for="username">
+      Username
+    </label>
+    <input id="username"
+           type="text"
+           formControlName="username"
+           placeholder="Username"/>
 
-      <label for="password">
-        Password
-      </label>
-      <input id="password"
-             type="password"
-             formControlName="password"
-             placeholder="Password"/>
+    <label for="password">
+      Password
+    </label>
+    <input id="password"
+           type="password"
+           formControlName="password"
+           placeholder="Password"/>
 
-    <button class="login-form-button login-form-margin">Log in</button>
+    <button type="submit"
+            class="login-form-button login-form-margin">Log in
+    </button>
     <span>
           Or <a [routerLink]="['/auth/register']">register now!</a>
     </span>

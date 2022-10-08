@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../../core/services/auth.service";
 import {LoginCreds} from "../../../core/models/login-creds.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,8 @@ import {LoginCreds} from "../../../core/models/login-creds.model";
 export class LoginComponent implements OnInit {
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -19,6 +21,8 @@ export class LoginComponent implements OnInit {
   login(creds: LoginCreds) {
     this.authService.login(creds).subscribe(res => {
       this.authService.saveUser(res);
+      console.log('aea')
+      this.router.navigate(['/'])
     })
   }
 

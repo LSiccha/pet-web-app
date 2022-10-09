@@ -14,8 +14,8 @@ export class LoginFormComponent implements OnInit, AfterViewInit {
   validateForm: FormGroup
   message: string = ''
 
-  @ViewChild('username') usernameInput! : ElementRef<HTMLElement>;
-  @ViewChild('password') passwordInput! : ElementRef<HTMLElement>;
+  /*@ViewChild('username') usernameInput! : ElementRef<HTMLElement>;
+  @ViewChild('password') passwordInput! : ElementRef<HTMLElement>;*/
 
   @Output() onSubmit: EventEmitter<LoginCreds> = new EventEmitter<LoginCreds>();
 
@@ -33,14 +33,14 @@ export class LoginFormComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    merge(
+    /*merge(
       fromEvent<InputEvent>(this.usernameInput.nativeElement, 'input'),
       fromEvent<InputEvent>(this.passwordInput.nativeElement, 'input'),
     ).subscribe(
       () => {
         this.message = ''
       }
-    )
+    )*/
   }
 
   submitForm() {

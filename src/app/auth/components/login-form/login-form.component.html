@@ -4,21 +4,25 @@
         class="login-form"
         (ngSubmit)="submitForm()">
 
-    <label for="username">
-      Username
-    </label>
-    <input id="username"
-           type="text"
-           formControlName="username"
-           placeholder="Username"/>
+    <div class="form-group">
+      <label for="username">
+        Email
+      </label>
+      <input id="username"
+             type="text"
+             formControlName="username"
+             placeholder="Email"/>
+    </div>
 
-    <label for="password">
-      Password
-    </label>
-    <input id="password"
-           type="password"
-           formControlName="password"
-           placeholder="Password"/>
+    <div class="form-group">
+      <label for="password">
+        Password
+      </label>
+      <input id="password"
+             type="password"
+             formControlName="password"
+             placeholder="Password"/>
+    </div>
 
     <button type="submit"
             class="login-form-button login-form-margin">Log in

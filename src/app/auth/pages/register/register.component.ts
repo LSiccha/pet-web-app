@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../../../core/services/auth.service";
+import {Router} from "@angular/router";
+import {LoginCreds} from "../../../core/models/login-creds.model";
+import {RegisterCreds} from "../../../core/models/register-creds.model";
 
 @Component({
   selector: 'app-register',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  login(creds: RegisterCreds) {
+    this.authService.register(creds).subscribe(res => {
+      this.authService.saveUser(res);
+      this.router.navigate(['/'])
+    })
+  }
+
+  register(creds: RegisterCreds) {
+    this.authService.register(creds).subscribe(res => {
+      this.authService.saveUser(res);
+      this.router.navigate(['/'])
+    });
+  }
 }

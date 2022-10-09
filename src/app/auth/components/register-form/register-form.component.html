@@ -1,1 +1,35 @@
-<p>register-form works!</p>
+<div class="outer-container">
+  <h2>Register</h2>
+  <form [formGroup]="validateForm"
+        class="login-form"
+        (ngSubmit)="submitForm()">
+
+    <div class="form-group">
+      <label for="username">
+        Enter your email
+      </label>
+      <input id="username"
+             type="text"
+             formControlName="username"
+             placeholder="Email"/>
+    </div>
+
+    <div class="form-group">
+      <label for="password">
+        Password
+      </label>
+      <input id="password"
+             type="password"
+             formControlName="password"
+             placeholder="Password"/>
+    </div>
+
+    <button type="submit"
+            class="login-form-button login-form-margin">Register
+    </button>
+    <span>
+          Or <a [routerLink]="['/auth/login']">Log In!</a>
+    </span>
+
+  </form>
+</div>

@@ -1,0 +1,30 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap:  0.5rem;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3C4048;
+}
+
+input {
+  width: 100%;
+  padding: 8px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+button {
+}
+
+span {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  color: #3C4048;
+}

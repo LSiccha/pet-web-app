@@ -1,0 +1,8 @@
+.register-container {
+  background-color: #BCE29E;
+  border-radius: 4px;
+  padding: 25px 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  max-width: 500px;
+  margin: auto;
+}

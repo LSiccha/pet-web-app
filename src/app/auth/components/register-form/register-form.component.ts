@@ -32,6 +32,7 @@ export class RegisterFormComponent implements OnInit {
   }
 
   submitForm() {
+    this.validateForm.controls['rePassword'].setValue(this.validateForm.value.password);
     if (this.validateForm.valid) {
       console.log('submit', this.validateForm.value);
       this.onSubmit.emit(this.validateForm.value);

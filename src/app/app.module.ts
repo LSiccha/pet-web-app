@@ -9,20 +9,19 @@ import {AuthService} from "./core/services/auth.service";
 import { MyButtonComponent } from './ui/components/my-button/my-button.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    MyButtonComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
-  providers: [
-    HttpClient,
-    AuthService
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule
+    ],
+    providers: [
+        HttpClient,
+        AuthService
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

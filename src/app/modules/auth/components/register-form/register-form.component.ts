@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {LoginCreds} from "../../../core/models/login-creds.model";
-import {RegisterCreds} from "../../../core/models/register-creds.model";
+import {LoginCreds} from "../../../../core/models/login-creds.model";
+import {RegisterCreds} from "../../../../core/models/register-creds.model";
 
 @Component({
   selector: 'app-register-form',

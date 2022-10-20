@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../../../core/services/auth.service";
-import {LoginCreds} from "../../../core/models/login-creds.model";
+import {AuthService} from "../../../../core/services/auth.service";
+import {LoginCreds} from "../../../../core/models/login-creds.model";
 import {Router} from "@angular/router";
 
 @Component({

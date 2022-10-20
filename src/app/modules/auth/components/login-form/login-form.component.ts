@@ -1,8 +1,8 @@
 import {AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {fromEvent, merge} from "rxjs";
-import {User} from "../../../core/models/user.model";
-import {LoginCreds} from "../../../core/models/login-creds.model";
+import {User} from "../../../../core/models/user.model";
+import {LoginCreds} from "../../../../core/models/login-creds.model";
 
 @Component({
   selector: 'app-login-form',

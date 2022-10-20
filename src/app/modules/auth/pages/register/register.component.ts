@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
   register(creds: RegisterCreds) {
     this.authService.register(creds).subscribe(res => {
       this.authService.saveUser(res);
-      this.router.navigate(['/'])
+      this.router.navigate(['/home'])
     });
   }
 }

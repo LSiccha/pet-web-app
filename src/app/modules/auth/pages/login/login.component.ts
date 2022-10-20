@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   login(creds: LoginCreds) {
     this.authService.login(creds).subscribe(res => {
       this.authService.saveUser(res);
-      this.router.navigate(['/'])
+      this.router.navigate(['/home'])
     });
   }
 

@@ -7,16 +7,20 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {AuthService} from "./core/services/auth.service";
 import { MyButtonComponent } from './ui/components/my-button/my-button.component';
+import { LayoutComponent } from './core/layout/layout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavbarComponent,
+        LayoutComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+        BrowserAnimationsModule
     ],
     providers: [
         HttpClient,

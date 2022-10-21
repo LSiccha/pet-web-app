@@ -22,13 +22,32 @@ header {
 ul {
   list-style: none;
   display: flex;
-  align-items: baseline;
   padding: 0;
-  gap: 0 3rem;
+  align-items: baseline;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
 }
 
 li {
   font-size: 20px;
+  padding: 10px 15px;
+  position: relative;
+}
+
+li::after {
+  position: absolute;
+  content:"";
+  background: black;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 1.5px;
+}
+
+.nav li:first-child::after {
+  display: none;
 }
 
 li:hover {

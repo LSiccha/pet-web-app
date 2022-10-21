@@ -1,22 +1,17 @@
 header {
   background-color: #F8C4B4;
   width: 100%;
-  height: 100px;
+}
+
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 35px;
 }
 
 .logo {
   width: 250px;
-}
-
-.logo-container {
-  margin-left: 40px;
-}
-
-.nav {
-  margin-right: 40px;
 }
 
 ul {
@@ -46,11 +41,15 @@ li::after {
   width: 1.5px;
 }
 
-.nav li:first-child::after {
+li:first-child::after {
   display: none;
 }
 
 li:hover {
   color: #FC4646;
   cursor: pointer;
+}
+
+.profile mat-icon {
+  transform: scale(1.5);
 }

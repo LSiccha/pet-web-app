@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { SampleComponent } from './pages/sample/sample.component';
 import {UiModule} from "../../ui/ui.module";
+import { PawCounterComponent } from './paw-counter/paw-counter.component';
 
 
 @NgModule({
   declarations: [
-    SampleComponent
+    SampleComponent,
+    PawCounterComponent
   ],
   imports: [
     CommonModule,

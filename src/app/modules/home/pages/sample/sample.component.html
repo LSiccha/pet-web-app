@@ -21,8 +21,15 @@
     </div>
   </section>
 
+  <section *ngIf="pawsData$ | async as pawsData">
+    <app-paw-counter *ngFor="let paw of pawsData"
+                     [label]="paw.description"
+                     [counter]="paw.count"
+    >
+    </app-paw-counter>
+  </section>
   <section class="third-section">
-    <app-paw-counter [counter]="4" label="PERRITOS ALBERGADOS" ></app-paw-counter>
+
   </section>
 </div>
 

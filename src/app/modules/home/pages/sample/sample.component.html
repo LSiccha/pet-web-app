@@ -21,15 +21,21 @@
     </div>
   </section>
 
-  <section *ngIf="pawsData$ | async as pawsData">
-    <app-paw-counter *ngFor="let paw of pawsData"
-                     [label]="paw.description"
-                     [counter]="paw.count"
-    >
-    </app-paw-counter>
+  <section
+    class="third-section">
+    <ng-container *ngIf="pawsData$ | async as pawsData; else spinner">
+      <app-paw-counter
+        *ngFor="let paw of pawsData"
+        [label]="paw.description"
+        [counter]="paw.count"
+      >
+      </app-paw-counter>
+    </ng-container>
   </section>
-  <section class="third-section">
 
-  </section>
+  <ng-template #spinner>
+    <mat-spinner></mat-spinner>
+  </ng-template>
+
 </div>
 

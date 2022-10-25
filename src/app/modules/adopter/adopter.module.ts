@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { AdopterRoutingModule } from './adopter-routing.module';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ProfileFormComponent } from './components/profile-form/profile-form.component';
 
 
 @NgModule({
   declarations: [
-    ProfileComponent
+    ProfileComponent,
+    ProfileFormComponent
   ],
   imports: [
     CommonModule,

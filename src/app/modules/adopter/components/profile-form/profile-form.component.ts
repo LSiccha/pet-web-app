@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Profile} from "../../../../core/models/profile.model";
+import {ProfileComponent} from "../../pages/profile/profile.component";
 
 @Component({
   selector: 'app-profile-form',
@@ -9,7 +10,8 @@ import {Profile} from "../../../../core/models/profile.model";
 })
 export class ProfileFormComponent implements OnInit {
 
-  private _profile!: Profile;
+  @Input('profile') private _profile!: Profile;
+  @Output() onSubmit: EventEmitter<Profile> = new EventEmitter<Profile>()
   formGroup!: FormGroup;
 
 
@@ -54,7 +56,8 @@ export class ProfileFormComponent implements OnInit {
     );
   }
 
-  onSubmit(value: any) {
-
+  onSubmitForm(value: Profile) {
+    let profile = this.formGroup.value;
+    this.onSubmit.emit(profile);
   }
 }

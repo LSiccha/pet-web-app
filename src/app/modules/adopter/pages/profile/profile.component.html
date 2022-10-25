@@ -7,7 +7,8 @@
       </span>
     </mat-toolbar>
     <div class="form-container">
-      <app-profile-form class="form">
+      <app-profile-form class="form"
+                        (onSubmit)="onFormSubmit($event)">
       </app-profile-form>
     </div>
   </div>

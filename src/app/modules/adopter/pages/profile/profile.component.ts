@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Profile} from "../../../../core/models/profile.model";
 
 @Component({
   selector: 'app-profile',
@@ -10,6 +11,10 @@ export class ProfileComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onFormSubmit(profile: Profile) {
+    console.log(profile)
   }
 
 }

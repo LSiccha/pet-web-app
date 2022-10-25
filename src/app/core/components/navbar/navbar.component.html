@@ -9,7 +9,7 @@
     <nav class="nav"
          *ngIf="currentUser$ | async as user; else notAuthenticated">
       <ul>
-        <li>
+        <li [routerLink]="['adopter/shelter']">
           <a>
             Albergue
           </a>

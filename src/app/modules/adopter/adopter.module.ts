@@ -6,12 +6,16 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ProfileFormComponent } from './components/profile-form/profile-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {UiModule} from "../../ui/ui.module";
+import { ShelterComponent } from './pages/shelter/shelter.component';
+import { PetComponent } from './pages/pet/pet.component';
 
 
 @NgModule({
   declarations: [
     ProfileComponent,
-    ProfileFormComponent
+    ProfileFormComponent,
+    ShelterComponent,
+    PetComponent
   ],
   imports: [
     CommonModule,

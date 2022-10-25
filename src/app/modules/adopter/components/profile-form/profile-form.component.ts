@@ -54,4 +54,7 @@ export class ProfileFormComponent implements OnInit {
     );
   }
 
+  onSubmit(value: any) {
+
+  }
 }

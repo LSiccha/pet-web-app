@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { AdopterRoutingModule } from './adopter-routing.module';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ProfileFormComponent } from './components/profile-form/profile-form.component';
-import {MatToolbarModule} from "@angular/material/toolbar";
 import {ReactiveFormsModule} from "@angular/forms";
+import {UiModule} from "../../ui/ui.module";
 
 
 @NgModule({
@@ -16,8 +16,8 @@ import {ReactiveFormsModule} from "@angular/forms";
   imports: [
     CommonModule,
     AdopterRoutingModule,
-    MatToolbarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    UiModule
   ]
 })
 export class AdopterModule { }

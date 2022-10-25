@@ -2,9 +2,87 @@
   <span>
     Crear Perfil
   </span>
-  <div>
-    <form [formGroup]="formGroup">
-
-    </form>
-  </div>
 </mat-toolbar>
+
+<div>
+  <form [formGroup]="formGroup"
+        (ngSubmit)="onSubmit(formGroup.value)">
+
+    <mat-form-field>
+      <input matInput
+             placeholder="Nombre"
+             formControlName="name">
+      <mat-error *ngIf="
+      !formGroup.controls['name'].valid &&
+      formGroup.controls['name'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             placeholder="Apellido"
+             formControlName="surname">
+      <mat-error *ngIf="
+      !formGroup.controls['surname'].valid &&
+      formGroup.controls['surname'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             placeholder="Edad"
+             formControlName="age">
+      <mat-error *ngIf="
+      !formGroup.controls['age'].valid &&
+      formGroup.controls['age'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             placeholder="DNI"
+             formControlName="dni">
+      <mat-error *ngIf="
+      !formGroup.controls['dni'].valid &&
+      formGroup.controls['dni'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             placeholder="Celular"
+             formControlName="phone">
+      <mat-error *ngIf="
+      !formGroup.controls['phone'].valid &&
+      formGroup.controls['phone'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             placeholder="Direccion"
+             formControlName="address">
+      <mat-error *ngIf="
+      !formGroup.controls['address'].valid &&
+      formGroup.controls['address'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             placeholder="Correo"
+             formControlName="email">
+      <mat-error *ngIf="
+      !formGroup.controls['email'].valid &&
+      formGroup.controls['email'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>

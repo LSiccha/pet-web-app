@@ -1,14 +1,9 @@
-<mat-toolbar color="primary">
-  <span>
-    Crear Perfil
-  </span>
-</mat-toolbar>
 
 <div>
   <form [formGroup]="formGroup"
         (ngSubmit)="onSubmit(formGroup.value)">
 
-    <mat-form-field>
+    <mat-form-field class="form-field">
       <input matInput
              placeholder="Nombre"
              formControlName="name">
@@ -19,7 +14,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field class="form-field">
       <input matInput
              placeholder="Apellido"
              formControlName="surname">
@@ -30,7 +25,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field class="form-field">
       <input matInput
              placeholder="Edad"
              formControlName="age">
@@ -41,7 +36,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field class="form-field">
       <input matInput
              placeholder="DNI"
              formControlName="dni">
@@ -52,7 +47,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field class="form-field">
       <input matInput
              placeholder="Celular"
              formControlName="phone">
@@ -63,7 +58,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field class="form-field">
       <input matInput
              placeholder="Direccion"
              formControlName="address">
@@ -74,7 +69,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field class="form-field">
       <input matInput
              placeholder="Correo"
              formControlName="email">

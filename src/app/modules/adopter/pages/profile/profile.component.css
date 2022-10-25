@@ -5,10 +5,12 @@
 }
 
 .profile-container {
-  background-color: #BCE29E;
-  border-radius: 4px;
-  padding: 25px 25px;
+  background-color: #F8C4B4;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  max-width: 500px;
+  max-width: 700px;
   margin: auto;
+}
+
+.form-container {
+  padding: 15px 40px;
 }

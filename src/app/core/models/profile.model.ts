@@ -1,4 +1,4 @@
-export interface profile {
+export interface Profile {
   name: string,
   surname: string,
   age: number,

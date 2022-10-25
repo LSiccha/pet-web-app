@@ -1,6 +1,7 @@
 <header>
   <div class="header-container">
-    <div class="logo-container">
+    <div class="logo-container"
+         [routerLink]="['home']">
       <img class="logo"
            src="assets/images/logo.png"
            alt="logo">
@@ -40,7 +41,8 @@
         <mat-icon>person</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item
+                [routerLink]="['adopter/profile']">
           <mat-icon>book</mat-icon>
           <span>Profile ({{ user.username }}) </span>
         </button>

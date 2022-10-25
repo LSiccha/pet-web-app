@@ -10,6 +10,10 @@ header {
   padding: 20px 30px;
 }
 
+.logo-container:hover {
+  cursor: pointer;
+}
+
 .logo {
   width: 250px;
 }

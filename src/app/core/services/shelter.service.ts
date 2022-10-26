@@ -18,4 +18,14 @@ export class ShelterService {
       }, 1000);
     })
   };
+
+  public getPetInfo(id: string) : Observable<Pet> {
+    let pet = pets.find(p => p.id === id);
+    return new Observable<Pet>((subscriber) => {
+      setTimeout(() => {
+        subscriber.next(pet);
+        subscriber.complete();
+      }, 1000)
+    })
+  }
 }

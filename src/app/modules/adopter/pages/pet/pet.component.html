@@ -1,1 +1,26 @@
-<p>pet works!</p>
+<div class="outer-container">
+
+  <div class="container">
+    <mat-toolbar color="primary">
+      <span>
+        Pet Information
+      </span>
+    </mat-toolbar>
+    <div class="pet-info-container" *ngIf="pet$ | async as pet; else spinner">
+      <div class="image">
+        <img [src]="pet.img" alt="">
+      </div>
+      <div class="info">
+        <h2>
+          {{ pet.name }}
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #spinner>
+  <div class="loading">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

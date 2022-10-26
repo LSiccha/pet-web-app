@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from "rxjs";
+import {Pet} from "../../../../core/models/pet.model";
+import {ShelterService} from "../../../../core/services/shelter.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-pet',
@@ -7,7 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PetComponent implements OnInit {
 
-  constructor() { }
+  pet$: Observable<Pet | null>;
+
+  constructor(
+    private shelterService: ShelterService,
+    private route: ActivatedRoute
+  ) {
+    let id = route.snapshot.paramMap.get('id');
+    // @ts-ignore
+    this.pet$=shelterService.getPetInfo(id);
+  }
 
   ngOnInit(): void {
   }

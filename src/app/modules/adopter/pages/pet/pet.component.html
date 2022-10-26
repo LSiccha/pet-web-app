@@ -39,6 +39,12 @@
         <button class="adopt-button" color="primary" mat-raised-button>Adoptar</button>
       </div>
     </div>
+    <div class="other-pets">
+      <h2>Otras Mascotas</h2>
+      <ng-container *ngIf="pets$ | async as pets; else spinner">
+        <app-pet-carousel [pets]="pets"></app-pet-carousel>
+      </ng-container>
+    </div>
   </div>
 </div>
 

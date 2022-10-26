@@ -9,6 +9,7 @@ import {UiModule} from "../../ui/ui.module";
 import { ShelterComponent } from './pages/shelter/shelter.component';
 import { PetComponent } from './pages/pet/pet.component';
 import { PetCardComponent } from './components/pet-card/pet-card.component';
+import {PetCarouselComponent} from "./components/pet-carousel/pet-carousel.component";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PetCardComponent } from './components/pet-card/pet-card.component';
     ProfileFormComponent,
     ShelterComponent,
     PetComponent,
-    PetCardComponent
+    PetCardComponent,
+    PetCarouselComponent
   ],
   imports: [
     CommonModule,

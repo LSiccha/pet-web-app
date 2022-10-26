@@ -12,6 +12,7 @@ import {ActivatedRoute} from "@angular/router";
 export class PetComponent implements OnInit {
 
   pet$: Observable<Pet | null>;
+  pets$: Observable<Pet[] | null>;
 
   constructor(
     private shelterService: ShelterService,
@@ -20,6 +21,7 @@ export class PetComponent implements OnInit {
     let id = route.snapshot.paramMap.get('id');
     // @ts-ignore
     this.pet$=shelterService.getPetInfo(id);
+    this.pets$ = shelterService.getShelterPets();
   }
 
   ngOnInit(): void {

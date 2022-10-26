@@ -10,7 +10,23 @@ import {ProfileComponent} from "../../pages/profile/profile.component";
 })
 export class ProfileFormComponent implements OnInit {
 
-  @Input('profile') private _profile!: Profile;
+  private _profile!: Profile;
+  @Input('profile')
+  set profile(profile: Profile) {
+    this._profile = profile;
+    this.formGroup.patchValue(
+      {
+        name: profile.name,
+        surname: profile.surname,
+        age: profile.age,
+        dni: profile.dni,
+        phone: profile.phone,
+        address: profile.address,
+        email: profile.email
+      }
+    )
+  }
+
   @Output() onSubmit: EventEmitter<Profile> = new EventEmitter<Profile>()
   formGroup!: FormGroup;
 

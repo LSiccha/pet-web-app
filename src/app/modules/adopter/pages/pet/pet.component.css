@@ -31,15 +31,33 @@
 }
 
 .info {
-  background-color: #F8C4B4;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-color: #ffded1;
   width: 100%;
   padding: 40px 20px;
 }
 
-.info h2 {
+.info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.info-header h2 {
+  display: inline-block;
   font-weight: bolder;
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin: 0;
+}
+
+.info-header mat-icon {
+  transform: scale(0.8);
+}
+
+.info-header button {
+  height: 40px;
+  text-decoration: underline;
 }
 
 .info ul {

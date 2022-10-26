@@ -11,9 +11,15 @@
         <img [src]="pet.img" alt="">
       </div>
       <div class="info">
-        <h2>
-          {{ pet.name }}
-        </h2>
+        <div class="info-header">
+          <h2>
+            {{ pet.name }}
+          </h2>
+          <button mat-raised-button color="accent">
+            <mat-icon [ngStyle]="{'color':'white'}">favorite</mat-icon>
+            Add to Favorites
+          </button>
+        </div>
         <ul>
           <li>
             Edad: {{ pet.age }}

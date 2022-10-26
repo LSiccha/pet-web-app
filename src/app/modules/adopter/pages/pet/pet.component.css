@@ -9,6 +9,7 @@
 }
 
 .pet-info-container {
+  margin-top: 40px;
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -27,6 +28,37 @@
 
 .image img {
   width: 100%;
+}
+
+.info {
+  background-color: #F8C4B4;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.info h2 {
+  font-weight: bolder;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.info ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem 0;
+}
+
+.info li {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.info .description {
+  margin-top: 40px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .loading {

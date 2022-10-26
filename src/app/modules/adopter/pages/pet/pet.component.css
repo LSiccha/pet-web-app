@@ -79,6 +79,11 @@
   font-weight: bold;
 }
 
+.adopt-button {
+  width: calc(100% - 20px);
+  margin-top: 70px;
+}
+
 .loading {
   width: 100%;
   height: 600px;

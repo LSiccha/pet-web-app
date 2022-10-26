@@ -1,1 +1,14 @@
-<p>shelter works!</p>
+<div class="outer-container">
+
+  <div class="shelter-container">
+    <mat-toolbar color="primary">
+      <span>
+        Our Pets
+      </span>
+    </mat-toolbar>
+    <div class="pets">
+      <app-pet-card [pet]="pet" *ngFor="let pet of pets">
+      </app-pet-card>
+    </div>
+  </div>
+</div>

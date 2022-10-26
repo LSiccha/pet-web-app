@@ -1,0 +1,18 @@
+.outer-container {
+  position: relative;
+  height: 100%;
+  padding: 50px 0;
+}
+
+.shelter-container {
+  margin: auto;
+}
+
+.pets {
+  margin-top: 10px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}

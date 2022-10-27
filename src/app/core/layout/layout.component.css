@@ -30,6 +30,9 @@ main {
 
 @media screen and (max-width: 480px) {
   main {
-    padding: 50px 25px 0;
+    /*padding: 50px 25px 0;*/
+  }
+  main {
+    padding: 0 10px;
   }
 }

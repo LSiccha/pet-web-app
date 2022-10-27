@@ -1,33 +1,41 @@
 <div class="outer-container">
   <h2>Register</h2>
-  <form [formGroup]="validateForm"
-        class="login-form"
+  <form [formGroup]="formGroup"
         (ngSubmit)="submitForm()">
 
-    <div class="form-group">
-      <label for="username">
-        Enter your email
-      </label>
-      <input id="username"
-             type="text"
-             formControlName="username"
-             placeholder="Email"/>
-    </div>
+    <mat-form-field class="form-field">
+      <input matInput
+             placeholder="Email"
+             formControlName="username">
+      <mat-error *ngIf="
+      !formGroup.controls['username'].valid &&
+      formGroup.controls['username'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
 
-    <div class="form-group">
-      <label for="password">
-        Password
-      </label>
-      <input id="password"
+    <mat-form-field class="form-field">
+      <input matInput
              type="password"
-             formControlName="password"
-             placeholder="Password"/>
+             placeholder="Password"
+             formControlName="password">
+      <mat-error *ngIf="
+      !formGroup.controls['password'].valid &&
+      formGroup.controls['password'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
+
+    <div class="submit-button">
+      <button mat-raised-button
+              color="primary"
+              type="submit"
+              class="button"
+              [disabled]="!formGroup.valid">Register
+      </button>
     </div>
-
-    <app-my-button type="submit" label="Register"></app-my-button>
     <span>
-          Or <a [routerLink]="['/auth/login']">Log In!</a>
+          Or <a [routerLink]="['/auth/login']">Log in!</a>
     </span>
-
   </form>
 </div>

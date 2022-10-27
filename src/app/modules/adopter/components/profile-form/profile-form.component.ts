@@ -30,12 +30,10 @@ export class ProfileFormComponent implements OnInit {
   @Output() onSubmit: EventEmitter<Profile> = new EventEmitter<Profile>()
   formGroup!: FormGroup;
 
-
   constructor(
     private formBuilder: FormBuilder
   ) {
     this.createForm();
-
   }
 
   ngOnInit(): void {

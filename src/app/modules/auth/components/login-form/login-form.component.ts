@@ -9,46 +9,48 @@ import {LoginCreds} from "../../../../core/models/login-creds.model";
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css']
 })
-export class LoginFormComponent implements OnInit, AfterViewInit {
+export class LoginFormComponent implements OnInit {
 
-  validateForm: FormGroup
+  formGroup!: FormGroup
   message: string = ''
 
-  /*@ViewChild('username') usernameInput! : ElementRef<HTMLElement>;
-  @ViewChild('password') passwordInput! : ElementRef<HTMLElement>;*/
 
   @Output() onSubmit: EventEmitter<LoginCreds> = new EventEmitter<LoginCreds>();
 
   constructor(
     private fb: FormBuilder
   ) {
-    this.validateForm = this.fb.group({
-      username: [null, [Validators.required]],
-      password: [null, [Validators.required]],
-      remember: [null]
-    })
+    this.createForm();
   }
 
   ngOnInit(): void {
+    this.createForm();
   }
 
-  ngAfterViewInit() {
-    /*merge(
-      fromEvent<InputEvent>(this.usernameInput.nativeElement, 'input'),
-      fromEvent<InputEvent>(this.passwordInput.nativeElement, 'input'),
-    ).subscribe(
-      () => {
-        this.message = ''
+  createForm() {
+    let emailregex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+    this.formGroup = this.fb.group(
+      {
+        'username': [
+          null, [Validators.required]
+        ],
+        'password': [
+          null, [Validators.required]
+        ],
+        'remember': [
+          null, []
+        ],
       }
-    )*/
+    );
   }
 
   submitForm() {
-    if (this.validateForm.valid) {
-      console.log('submit', this.validateForm.value);
-      this.onSubmit.emit(this.validateForm.value);
+    if (this.formGroup.valid) {
+      console.log('submit', this.formGroup.value);
+      this.onSubmit.emit(this.formGroup.value);
     } else {
-      Object.values(this.validateForm.controls).forEach(control => {
+      Object.values(this.formGroup.controls).forEach(control => {
         if (control.invalid) {
           control.markAsDirty();
           control.updateValueAndValidity({onlySelf: true});

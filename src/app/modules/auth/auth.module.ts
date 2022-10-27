@@ -8,6 +8,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {UiModule} from "../../ui/ui.module";
+import { PasswordRecoverComponent } from './pages/password-recover/password-recover.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {UiModule} from "../../ui/ui.module";
     RegisterComponent,
     LoginFormComponent,
     RegisterFormComponent,
+    PasswordRecoverComponent,
   ],
   imports: [
     CommonModule,

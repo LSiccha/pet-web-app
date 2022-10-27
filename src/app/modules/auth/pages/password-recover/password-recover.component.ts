@@ -1,21 +1,14 @@
-import {AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {fromEvent, merge} from "rxjs";
-import {User} from "../../../../core/models/user.model";
-import {LoginCreds} from "../../../../core/models/login-creds.model";
 
 @Component({
-  selector: 'app-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css']
+  selector: 'app-password-recover',
+  templateUrl: './password-recover.component.html',
+  styleUrls: ['./password-recover.component.css']
 })
-export class LoginFormComponent implements OnInit {
+export class PasswordRecoverComponent implements OnInit {
 
   formGroup!: FormGroup;
-  message: string = ''
-
-
-  @Output() onSubmit: EventEmitter<LoginCreds> = new EventEmitter<LoginCreds>();
 
   constructor(
     private fb: FormBuilder
@@ -32,13 +25,13 @@ export class LoginFormComponent implements OnInit {
 
     this.formGroup = this.fb.group(
       {
-        'username': [
+        'email': [
           null, [Validators.required]
         ],
         'password': [
           null, [Validators.required]
         ],
-        'remember': [
+        'rePassword': [
           null, []
         ],
       }
@@ -46,9 +39,9 @@ export class LoginFormComponent implements OnInit {
   }
 
   submitForm() {
+    this.formGroup.controls['rePassword'].setValue(this.formGroup.value.password);
     if (this.formGroup.valid) {
       console.log('submit', this.formGroup.value);
-      this.onSubmit.emit(this.formGroup.value);
     } else {
       Object.values(this.formGroup.controls).forEach(control => {
         if (control.invalid) {

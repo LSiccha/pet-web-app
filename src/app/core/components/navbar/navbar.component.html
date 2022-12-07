@@ -8,28 +8,9 @@
     </div>
     <nav class="nav"
          *ngIf="currentUser$ | async as user; else notAuthenticated">
-      <ul>
-        <li [routerLink]="['adopter/shelter']">
-          <a>
-            Albergue
-          </a>
-        </li>
-        <li>
-          <a>
-            Adopción
-          </a>
-        </li>
-        <li>
-          <a>
-            Voluntariado
-          </a>
-        </li>
-        <li>
-          <a>
-            Donación
-          </a>
-        </li>
-      </ul>
+      <ng-container *ngIf="user.idAdmin; else normalUser">
+        <ng-container [ngTemplateOutlet]="adminUser"></ng-container>
+      </ng-container>
     </nav>
 
     <div class="profile"
@@ -71,4 +52,49 @@
       </li>
     </ul>
   </nav>
+</ng-template>
+
+<ng-template #normalUser>
+  <ul>
+    <li [routerLink]="['adopter/shelter']">
+      <a>
+        Albergue
+      </a>
+    </li>
+    <li>
+      <a>
+        Adopción
+      </a>
+    </li>
+    <li>
+      <a>
+        Voluntariado
+      </a>
+    </li>
+    <li>
+      <a>
+        Donación
+      </a>
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #adminUser>
+  <ul>
+    <li
+      [routerLink]="['/admin/solicitudes']"
+    >
+      Solicitudes
+    </li>
+    <li
+      [routerLink]="['/admin/voluntariado']"
+    >
+      Voluntariados
+    </li>
+    <li
+      [routerLink]="['/admin/mascotas']"
+    >
+      Mascotas
+    </li>
+  </ul>
 </ng-template>

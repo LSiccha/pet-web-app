@@ -12,7 +12,6 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import { FooterComponent } from './core/components/footer/footer.component';
-import { SolicitudesComponent } from './modules/pages/solicitudes/solicitudes.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,6 @@ import { SolicitudesComponent } from './modules/pages/solicitudes/solicitudes.co
     NavbarComponent,
     LayoutComponent,
     FooterComponent,
-    SolicitudesComponent,
   ],
   imports: [
     BrowserModule,

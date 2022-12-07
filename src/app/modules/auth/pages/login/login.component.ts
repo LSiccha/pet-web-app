@@ -22,9 +22,12 @@ export class LoginComponent implements OnInit {
     this.authService.login(creds).subscribe(res => {
       this.authService.saveUser(res);
       if (res.idAdmin) {
+        console.log('asdasd')
         this.router.navigate(['/admin']);
       }
-      this.router.navigate(['/adopter'])
+      else {
+        this.router.navigate(['/adopter'])
+      }
     });
   }
 

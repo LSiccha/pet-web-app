@@ -3,25 +3,34 @@ import { RouterModule, Routes } from '@angular/router';
 import {ProfileComponent} from "../adopter/pages/profile/profile.component";
 import {ShelterComponent} from "../adopter/pages/shelter/shelter.component";
 import {PetComponent} from "../adopter/pages/pet/pet.component";
+import {SolicitudesComponent} from "./pages/solicitudes/solicitudes.component";
+import {SolicitudDetailComponent} from "./pages/solicitud-detail/solicitud-detail.component";
+import {VoluntariadosComponent} from "./pages/voluntariados/voluntariados.component";
+import {MascotasComponent} from "./pages/mascotas/mascotas.component";
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'shelter'
+    redirectTo: 'solicitudes'
   },
   {
-    path: 'profile',
-    component: ProfileComponent
+    path: 'solicitudes',
+    component: SolicitudesComponent
   },
   {
-    path: 'shelter',
-    component: ShelterComponent
+    path: 'solicitudes/:id',
+    component: SolicitudDetailComponent
   },
   {
-    path: 'pet/:id',
-    component: PetComponent
+    path: 'voluntariados',
+    component: VoluntariadosComponent
+  },
+  {
+    path: 'mascotas',
+    component: MascotasComponent
   }
+
 ];
 
 @NgModule({

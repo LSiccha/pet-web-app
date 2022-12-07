@@ -1,14 +1,18 @@
 import {Injectable} from '@angular/core';
 import {Observable, throwError} from "rxjs";
 import {Profile} from "../models/profile.model";
-import {HttpErrorResponse} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
+  url: string = environment.baseUrl + '/adoptante';
 
-  constructor() {
+  constructor(
+    private http: HttpClient
+  ) {
   }
 
   createProfile(profile: Profile): Observable<Profile> {
@@ -43,5 +47,9 @@ export class ProfileService {
         subscriber.complete();
       }, 1000);
     })
+  }
+
+  getByAdoptanteId(id: string): Observable<Profile> {
+    return this.http.get<Profile>(`${this.url}/perfil/${id}`);
   }
 }

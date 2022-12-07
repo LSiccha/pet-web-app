@@ -17,4 +17,7 @@ export class SolicitudService {
   getAll(): Observable<SolicitudModel[]> {
     return this.http.get<SolicitudModel[]>(this.url);
   }
+  getById(id: string): Observable<SolicitudModel> {
+    return this.http.get<SolicitudModel>(`${this.url}/${id}`);
+  }
 }

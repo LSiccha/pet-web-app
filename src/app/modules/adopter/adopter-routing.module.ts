@@ -6,6 +6,11 @@ import {PetComponent} from "./pages/pet/pet.component";
 
 const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'shelter'
+  },
+  {
     path: 'profile',
     component: ProfileComponent
   },

@@ -21,6 +21,11 @@ const routes: Routes = [
           path: 'adopter',
           loadChildren: () =>
             import('./modules/adopter/adopter.module').then(m => m.AdopterModule)
+        },
+        {
+          path: 'admin',
+          loadChildren: () =>
+            import('./modules/admin/admin.module').then(m => m.AdminModule)
         }
       ]
     }

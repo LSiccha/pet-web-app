@@ -7,6 +7,7 @@ import { SolicitudDetailComponent } from './pages/solicitud-detail/solicitud-det
 import { VoluntariadosComponent } from './pages/voluntariados/voluntariados.component';
 import { RegistrarVoluntariadoComponent } from './pages/registrar-voluntariado/registrar-voluntariado.component';
 import { MascotasComponent } from './pages/mascotas/mascotas.component';
+import {UiModule} from "../../ui/ui.module";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MascotasComponent } from './pages/mascotas/mascotas.component';
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    UiModule
   ]
 })
 export class AdminModule { }

@@ -36,7 +36,7 @@ export class MascotasComponent implements OnInit {
     if (confirm('Seguro?')) {
       this.mascotaService.deleteById(id).subscribe(
         r => {
-          let snackbar = this.snackBar.open('Registro Exitoso', 'Undo', {
+          let snackbar = this.snackBar.open('Eliminacion exitosa', 'Undo', {
             duration: 2000
           });
           this.fetchData();

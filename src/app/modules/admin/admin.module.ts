@@ -11,6 +11,7 @@ import {UiModule} from "../../ui/ui.module";
 import { RegistrarMascotaComponent } from './pages/registrar-mascota/registrar-mascota.component';
 import { MascotaFormComponent } from './components/mascota-form/mascota-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { VoluntariadoFormComponent } from './components/voluntariado-form/voluntariado-form.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     RegistrarVoluntariadoComponent,
     MascotasComponent,
     RegistrarMascotaComponent,
-    MascotaFormComponent
+    MascotaFormComponent,
+    VoluntariadoFormComponent
   ],
     imports: [
         CommonModule,

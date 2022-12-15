@@ -8,6 +8,7 @@ import {SolicitudDetailComponent} from "./pages/solicitud-detail/solicitud-detai
 import {VoluntariadosComponent} from "./pages/voluntariados/voluntariados.component";
 import {MascotasComponent} from "./pages/mascotas/mascotas.component";
 import {RegistrarMascotaComponent} from "./pages/registrar-mascota/registrar-mascota.component";
+import {RegistrarVoluntariadoComponent} from "./pages/registrar-voluntariado/registrar-voluntariado.component";
 
 const routes: Routes = [
   {
@@ -28,13 +29,18 @@ const routes: Routes = [
     component: VoluntariadosComponent
   },
   {
+    path: 'registrar-voluntariado',
+    component: RegistrarVoluntariadoComponent
+  },
+  {
     path: 'mascotas',
     component: MascotasComponent
   },
   {
     path: 'registrar-mascota',
     component: RegistrarMascotaComponent
-  }
+  },
+
 
 ];
 

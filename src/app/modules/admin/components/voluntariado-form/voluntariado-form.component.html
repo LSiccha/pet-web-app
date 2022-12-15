@@ -1,1 +1,96 @@
-<p>voluntariado-form works!</p>
+<div>
+  <form [formGroup]="formGroup"
+        (ngSubmit)="onSubmitForm(formGroup.value)">
+
+    <mat-form-field class="form-field">
+      <input matInput
+             placeholder="Nombres"
+             formControlName="nombres">
+      <mat-error *ngIf="
+      !formGroup.controls['nombres'].valid &&
+      formGroup.controls['nombres'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input matInput
+             type="number"
+             placeholder="Edad"
+             formControlName="edad">
+      <mat-error *ngIf="
+      !formGroup.controls['edad'].valid &&
+      formGroup.controls['edad'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input matInput
+             type="number"
+             placeholder="DNI"
+             formControlName="dni">
+      <mat-error *ngIf="
+      !formGroup.controls['dni'].valid &&
+      formGroup.controls['dni'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input matInput
+             type="number"
+             placeholder="Celular"
+             formControlName="celular">
+      <mat-error *ngIf="
+      !formGroup.controls['celular'].valid &&
+      formGroup.controls['celular'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input matInput
+             placeholder="Direccion"
+             formControlName="direccion">
+      <mat-error *ngIf="
+      !formGroup.controls['direccion'].valid &&
+      formGroup.controls['direccion'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input matInput
+             placeholder="Correo"
+             formControlName="correo">
+      <mat-error *ngIf="
+      !formGroup.controls['correo'].valid &&
+      formGroup.controls['correo'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input matInput
+             type="date"
+             placeholder="Fecha Registro"
+             formControlName="fechaRegistro">
+      <mat-error *ngIf="
+      !formGroup.controls['fechaRegistro'].valid &&
+      formGroup.controls['fechaRegistro'].touched"
+      >
+      </mat-error>
+    </mat-form-field>
+
+    <div class="submit-button">
+      <button mat-raised-button
+              color="primary"
+              type="submit"
+              class="button"
+              [disabled]="!formGroup.valid">Registrar Voluntario
+      </button>
+    </div>
+
+  </form>
+</div>

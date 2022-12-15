@@ -1,1 +1,8 @@
-<p>registrar-voluntariado works!</p>
+<section>
+  <div style="display: flex; justify-content: space-between; align-items: center">
+    <h2 style="margin: 0;">Registra un voluntario</h2>
+  </div>
+  <mat-card style="margin: 50px 150px;">
+    <app-voluntariado-form (onSubmit)="onNewVoluntario($event)"></app-voluntariado-form>
+  </mat-card>
+</section>

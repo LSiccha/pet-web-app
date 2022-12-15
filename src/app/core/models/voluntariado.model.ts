@@ -1,4 +1,7 @@
 export interface VoluntariadoModel {
+  admin: {
+    id: string
+  },
   id: string,
   nombres: string,
   edad: number,
@@ -6,5 +9,5 @@ export interface VoluntariadoModel {
   celular: string,
   direccion: string,
   correo: string,
-  fechaRegistro: Date
+  fechaRegistro: Date | string
 }

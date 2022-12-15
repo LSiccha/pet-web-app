@@ -17,4 +17,19 @@ export class MascotaService {
   public getById(id: string): Observable<MascotaModel> {
     return this.http.get<MascotaModel>(`${this.url}/${id}`);
   }
+
+  getAll(): Observable<MascotaModel[]> {
+    return this.http.get<MascotaModel[]>(this.url);
+  }
+
+  public createOne(mascota: MascotaModel): Observable<MascotaModel> {
+    return this.http.post<MascotaModel>(
+      this.url,
+      mascota
+    );
+  }
+
+  public deleteById(id: number): Observable<null> {
+    return this.http.delete<null>(`${this.url}/${id}`);
+  }
 }

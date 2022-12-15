@@ -12,6 +12,8 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import { FooterComponent } from './core/components/footer/footer.component';
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {MatDialog} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { FooterComponent } from './core/components/footer/footer.component';
   ],
   providers: [
     HttpClient,
-    AuthService
+    AuthService,
+    MatSnackBar,
+    MatDialog
   ],
   bootstrap: [AppComponent]
 })

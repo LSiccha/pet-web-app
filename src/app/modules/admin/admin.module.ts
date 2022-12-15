@@ -8,6 +8,9 @@ import { VoluntariadosComponent } from './pages/voluntariados/voluntariados.comp
 import { RegistrarVoluntariadoComponent } from './pages/registrar-voluntariado/registrar-voluntariado.component';
 import { MascotasComponent } from './pages/mascotas/mascotas.component';
 import {UiModule} from "../../ui/ui.module";
+import { RegistrarMascotaComponent } from './pages/registrar-mascota/registrar-mascota.component';
+import { MascotaFormComponent } from './components/mascota-form/mascota-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -16,12 +19,15 @@ import {UiModule} from "../../ui/ui.module";
     SolicitudDetailComponent,
     VoluntariadosComponent,
     RegistrarVoluntariadoComponent,
-    MascotasComponent
+    MascotasComponent,
+    RegistrarMascotaComponent,
+    MascotaFormComponent
   ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    UiModule
-  ]
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        UiModule,
+        ReactiveFormsModule
+    ]
 })
 export class AdminModule { }
